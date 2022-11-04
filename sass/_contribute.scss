@@ -20,8 +20,15 @@
                 font-weight: 600;
                 content: counter(steps);
                 background: linear-gradient(45deg, #2ca2b4, #5598de 24%, #7f87ff 45%, #f65aad 76%, #ec3d43);
+                @supports (background-clip: text) or (-webkit-background-clip: text) {
+                    background-clip: text;
+                    // Google Chrome fix
+                    -webkit-text-fill-color: transparent;
+                    background: -webkit-linear-gradient(90deg, #2ca2b4, #5598de 24%, #7f87ff 45%, #f65aad 76%, #ec3d43);
+                    background: -o-linear-gradient(transparent, transparent);
+                    -webkit-background-clip: text;
+                  }
                 color: transparent;
-                background-clip: text;
                 line-height: 1em;
                 position: absolute;
                 left: -15px;

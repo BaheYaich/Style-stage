@@ -31,6 +31,9 @@
       @media (max-width: 991px) {
         font-size: clamp(3rem, 4vw, var(--font-size-h2));
       }
+      @media (max-width: 768px) {
+        text-align: left;
+      }
     }
     > p {
       @media (max-width: 991px) {
@@ -135,7 +138,7 @@
       }
     }
     a {
-      color: $color-primary-alt;
+      color: #097aec;
       text-decoration: none;
       &:hover {
         text-decoration: underline;
@@ -179,6 +182,9 @@
       line-height: 1.25;
       color: white;
       filter: invert(1);
+      @media (max-width: 768px) {
+        text-align: left;
+      }
       &::after {
         content: "";
         background-color: black;
@@ -220,6 +226,11 @@
         background-size: 80%;
         color: #ff8e1c;
         font-size: 0.9rem;
+        font-weight: 300;
+        /* Firefox only */
+        @-moz-document url-prefix() {
+          font-weight: 400;
+        }
         content: "filter: invert()";
         @media (min-width: 1475px) {
           left: -120px;
@@ -264,6 +275,9 @@
       font-size: 1.5em;
       font-weight: var(--font-weight-strong);
       text-align: center;
+      @media (max-width: 768px) {
+        text-align: left;
+      }
     }
     ul {
       display: flex;
@@ -312,11 +326,13 @@
         width: 250px;
         border-radius: 0.5rem;
         box-shadow: 5px 5px 10px rgba(0,0,0,.05);
+        flex-shrink: 0;
         @media (max-width: 991px) {
           width: max-content;
           flex-wrap: wrap;
           justify-content: flex-start;
           height: auto;
+          flex-shrink: 1;
         }
       }
       &::after{
