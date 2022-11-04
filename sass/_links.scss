@@ -1,13 +1,16 @@
-.skip-link {
+body > a.skip-link {
   position: absolute;
   top: auto;
   left: -10000px;
   width: 1px;
   height: 1px;
-  background-color: var(--color-secondary);
+  background: rgb(29, 29, 29);
   color: #fff;
   font-size: 1.125rem;
   overflow: hidden;
+  z-index: 11;
+  text-decoration: none;
+  border: none;
 
   &:focus {
     position: fixed;
@@ -16,54 +19,41 @@
     width: auto;
     height: auto;
     padding: 0.5em;
+    outline: 1px white dashed;
   }
 }
 
-[class^="link"]:not(.link-codepen) {
-  min-height: 3em;
-  background-color: var(--color-primary);
+[class^="link"] {
+  background-color: $color-primary-alt;
   color: #fff;
-  box-shadow: 0.18em 0.18em var(--color-secondary);
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
+  white-space: nowrap;
+  border-radius: $border-radius;
+  font-size: 12px;
+  line-height: 1.33337;
+  font-weight: 400;
+  letter-spacing: -.01em;
+  min-width: 23px;
+  padding-left: 11px;
+  padding-right: 11px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  text-decoration: none;
 }
 
-[class^="link"]:not(.link-codepen),
+[class^="link"],
 .profile .container > a {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0 0.75em;
-  transform: translate(0, 0);
-  transition: 180ms all ease-in-out;
-  font-size: 1.125rem;
-  line-height: 1;
-  text-align: center;
-  text-decoration: none;
-
-  &:hover,
   &:focus {
-    transform: translate(-0.15em, -0.15em);
-    box-shadow: 0.3em 0.3em var(--color-secondary);
-  }
-
-  &:focus {
+    background-color: darken($color: ($color-primary-alt), $amount: 15%);
     outline-color: transparent;
     outline-style: solid;
   }
 }
 
-// stylelint-disable-next-line no-descending-specificity
-.page-footer [class^="link"] {
-  width: 100%;
-  min-height: 2.5em;
-  background-color: var(--color-background);
-  color: var(--color-primary);
-}
-
 .link-codepen {
-  display: block;
-  margin-top: 3rem;
-  font-size: var(--font-size-h4);
-
+  position: relative;
   &::before {
     position: absolute;
     padding-right: 1.25em;
@@ -72,25 +62,16 @@
     background-repeat: no-repeat;
     background-position: right 130%;
     background-size: 14%;
-    color: #6f6ffd;
+    color: $color-primary-alt;
     font-size: 0.85em;
     content: "Jump right in";
-  }
-}
-
-.link-allstyles {
-  font-size: var(--font-size-h4);
-
-  @media (max-width: 400px) {
-    margin-left: 6rem;
+    right: -10px;
+    top: -10px;
   }
 }
 
 .link-github {
   svg {
-    width: 1em;
-    height: 1em;
-    margin-right: 0.25em;
-    fill: currentColor;
+    display: none;
   }
 }

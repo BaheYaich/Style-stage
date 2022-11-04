@@ -1,7 +1,7 @@
 .profile {
   width: 95vw;
   max-width: 80ch;
-  margin: 1rem auto 10vh;
+  margin: 1rem auto 1rem;
   padding: 1.25rem;
   z-index: 1;
 
@@ -14,18 +14,25 @@
   .container {
     display: grid;
     justify-items: center;
-    grid-gap: 1rem;
+    gap: 1rem;
+    width: 100%;
 
-    > a {
-      min-height: 2em;
-      border: 2px solid currentColor;
-      color: var(--color-secondary);
+    a {
+      color: $color-primary-alt;
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+      &:focus, &:focus-within {
+        outline: 1px gray dashed;
+      }
     }
   }
 
   ul {
     display: flex;
     flex-wrap: wrap;
+    flex-direction: column;
     justify-content: center;
     margin: 0;
     padding: 0;
@@ -44,10 +51,6 @@
       span:nth-child(2) {
         flex-grow: 1;
         word-break: break-word;
-
-        a {
-          color: inherit;
-        }
       }
     }
   }
@@ -56,18 +59,15 @@
     position: fixed;
     right: 2vmin;
     bottom: 2vmin;
-    max-width: 30ch;
+    max-width: 22ch;
     margin-bottom: 0;
     border-radius: var(--border-radius);
     background-color: var(--color-light);
-    box-shadow: 0 2px 5px rgba(color(primary), 0.15);
+    box-shadow: 0 5px 5px rgba(color(primary), 0.15);
 
     ul {
-      justify-content: unset;
-
       li {
         padding: 0;
-
         span:nth-child(1) {
           width: 8ch;
           margin-right: 0;

@@ -6,6 +6,7 @@
 // $color-primary: #3a0;
 @import "theme";
 @import "reset";
+@import "container";
 @import "logomark";
 @import "typography";
 @import "layout";
@@ -19,3 +20,66 @@
 @import "profile";
 @import "footer";
 @import "links";
+
+body {
+    display: grid;
+    grid-template-areas: 
+    "nav"
+    "header"
+    "main"
+    "aside"
+    "footer";
+    font-size: 20px;
+    line-height: 1.4705882353;
+    font-weight: 400;
+    letter-spacing: -0.022em;
+    background-color:#fff;
+    color: #1d1d1f;
+    font-style: normal;
+    overflow: visible;
+    & *:focus {
+        outline: 1px white dashed;
+    }
+}
+
+// ********************************//
+// Start : Grid template areas declarations
+// ********************************//
+
+body > header {
+    grid-area: header
+}
+body > nav {
+    grid-area: nav
+}
+body main#main {
+    grid-area: main;
+    padding: 0;
+}
+body aside#styles {
+    grid-area: aside
+}
+body > footer {
+    grid-area: footer
+}
+
+// ********************************//
+// End : Grid template areas declarations
+// ********************************//
+
+body article {
+    padding: 0;
+}
+
+section {
+    a {
+      color: $color-primary-alt;
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+      &:focus, &:focus-within {
+        outline: 1px gray dashed;
+      }
+    }
+  }

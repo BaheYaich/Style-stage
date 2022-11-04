@@ -29,17 +29,6 @@ article {
 }
 
 article,
-.page-footer,
-#styles {
-  .container {
-    width: 100%;
-    max-width: 80ch;
-    margin-right: auto;
-    margin-left: auto;
-  }
-}
-
-article,
 #styles {
   padding: 1rem;
 }
@@ -49,6 +38,6 @@ article,
   display: grid;
   margin: 0 0 2rem;
   padding: 0;
-  grid-gap: 1em;
+  gap: 1em;
   list-style: none;
 }
