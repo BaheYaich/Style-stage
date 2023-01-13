@@ -1212,8 +1212,10 @@ body > a.skip-link:focus {
 [class^=link]:focus,
 .profile .container > a:focus {
   background-color: #004b97;
-  outline-color: transparent;
+  outline-color: #0071E3;
   outline-style: solid;
+  outline-width: 2px;
+  outline-offset: 1px;
 }
 
 .link-codepen {
@@ -1251,7 +1253,8 @@ body {
   overflow: visible;
 }
 body *:focus {
-  outline: 1px white dashed;
+  outline: 2px #0071E3 dashed;
+  outline-offset: 1px;
 }
 
 body > header {
@@ -1285,7 +1288,4 @@ section a {
 }
 section a:hover {
   text-decoration: underline;
-}
-section a:focus, section a:focus-within {
-  outline: 1px gray dashed;
 }

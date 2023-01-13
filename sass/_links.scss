@@ -47,8 +47,10 @@ body > a.skip-link {
 .profile .container > a {
   &:focus {
     background-color: darken($color: ($color-primary-alt), $amount: 15%);
-    outline-color: transparent;
+    outline-color: $color-primary-alt;
     outline-style: solid;
+    outline-width: 2px;
+    outline-offset: 1px;
   }
 }
 
